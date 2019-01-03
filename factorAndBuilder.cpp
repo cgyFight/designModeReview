@@ -10,7 +10,7 @@
 
 #include <iostream>
 #include <string>
-using name std;
+using namespace std;
 
 // factory
 // 开闭原则的体现->抽象父类，比如与运算的，有+ - * / 等等，通过抽象父类
@@ -20,33 +20,33 @@ class CISuperMan
 {
 public:
     CISuperMan() {}
-    ~CISuperMan() {}
-    virtual void mySpecialTalent() = 0;//超能力
-}
+    virtual  ~CISuperMan() {} // 抽象类的析构函数都需要用virtual，否则Father *child = new Child(); 时析构不会析构父类的
+    virtual void mySpecialTalent() const = 0 ;//超能力
+};
 
 // 2. 实例化多种子类
 class ChildSuperMan:public CISuperMan
 {
 public:
     ChildSuperMan() {}
-    ~ChildSuperMan() {}
-    virtual void mySpecialTalent()
+    ~ChildSuperMan() override {}
+    virtual void mySpecialTalent () const override
     {
         std::cout << "child super man" << std::endl;
     }
-}
+};
 
 // 2.1 
 class CAdultSuperMan : public CISuperMan
 {
 public:
     CAdultSuperMan() {}
-    ~CAdultSuperMan() {}
+    ~CAdultSuperMan() override {}
 
-    virtual void mySpecialTalent() {
+    virtual void mySpecialTalent() const override {
         std::cout << "adult super man" << std::endl;
     }
-}
+};
 
 // 3 创建一个工厂,目的是生产超人，具体是成年还是未成年由客户端决定
 class SuperManFactory
@@ -60,10 +60,10 @@ public:
         } else if ("child" == type) {
             return new ChildSuperMan();
         } else {
-            return NULL;
+            return nullptr;
         }
     }
-}
+};
 
 // 此例中使用了模板方法的模式,每一个建造者必须返回一个产品，但产品如何制造，则由各个建造者自己负责
 
@@ -76,14 +76,14 @@ public:
     ~ SupperMan() {}
 
     string getBody() {return body;}
-    void setBody(string &b) {body = b;}
+    void setBody( const string &b) {body = b;}
 
     string getSpecialTalent() {return specialTalent;} 
-    void setSpecialTalent(string &s) {specialTalent = s;} 
+    void setSpecialTalent(const string &s) {specialTalent = s;}
 private:
     string body;
     string specialTalent;
-}
+};
 
 // 2. 抽象建造者
 class Builder
@@ -100,7 +100,7 @@ public:
 
 protected:
     SupperMan * pSuperMan;
-}
+};
 
 
 
