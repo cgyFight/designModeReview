@@ -1,6 +1,7 @@
 #ifndef STRATEGY_H
 #define STRATEGY_H
-
+#include <iostream>
+using namespace std;
 
 /* 策略模式
  * 概述：定义一些列的算法，将他们封装，让他们可以互相替换，使得算法可以独立于客户而变化
@@ -20,7 +21,9 @@
 class HurtStrategy
 {
 public:
+    virtual ~HurtStrategy(){}
     virtual void hurt() = 0 {}
+
 
 private:
 };

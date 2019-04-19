@@ -8,7 +8,10 @@ SOURCES += \
     factorAndBuilder.cpp \
     sigle.cpp \
     behaviourMode/strategy.cpp \
-    behaviourMode/strategy.cpp
 
 HEADERS += \
-    behaviourMode/strategy.h
+    behaviourMode/strategy.h \
+    StructualType/adapter.h \
+    behaviourMode/template.h \
+    StructualType/faced.h \
+    decorate.h
