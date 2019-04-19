@@ -13,6 +13,7 @@ using namespace std;
 // 2. 懒汉式， 在运行时进行初始化, 也就是需要时在用
 
 // first
+
 // static似有变量，并提供一个静态方法作为单例的接口。让构造成为私有的，即该对象不能通过类外进行实例化
 extern mutex mt;
 mutex mt;
@@ -58,6 +59,7 @@ private:
     Singleton2 &operator = (const Singleton2 &);
 };
 
+#if 1
 class Signaleton3
 {
 public:
@@ -66,15 +68,13 @@ public:
     }
 
 private:
-    Signaleton3();
+    Signaleton3(){}
     static  Signaleton3 *instance;
 };
 
 Signaleton3 * Signaleton3::instance = new Signaleton3(); // 只要是静态区的初始化都是饿汉式
 
-
-
-
+#endif
 
 
 

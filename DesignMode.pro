@@ -6,4 +6,9 @@ CONFIG -= qt
 SOURCES += \
         main.cpp \
     factorAndBuilder.cpp \
-    sigle.cpp
+    sigle.cpp \
+    behaviourMode/strategy.cpp \
+    behaviourMode/strategy.cpp
+
+HEADERS += \
+    behaviourMode/strategy.h
