@@ -22,7 +22,7 @@ class HurtStrategy
 {
 public:
     virtual ~HurtStrategy(){}
-    virtual void hurt() = 0 {}
+    virtual void hurt() = 0;
 
 
 private:

@@ -14,4 +14,7 @@ HEADERS += \
     StructualType/adapter.h \
     behaviourMode/template.h \
     StructualType/faced.h \
-    decorate.h
+    decorate.h \
+    StructualType/proxy.h \
+    StructualType/flyweight.h \
+    behaviourMode/observer.h

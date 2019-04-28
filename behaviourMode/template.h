@@ -1,5 +1,7 @@
 #ifndef TEMPLATE_H
 #define TEMPLATE_H
+#include <iostream>
+using namespace std;
 /* 模板模式,将通用的算法方法抽象出来，将关键代码在父类中实现，其它步骤到子类中实现，比如游戏类有玩时有三个步骤，初始化，开始，结束
  * 不同的游戏有不同的初始化，开始，结束步骤
  */
